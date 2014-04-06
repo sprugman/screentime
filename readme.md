@@ -35,7 +35,7 @@ single-page web gallery for viewing images
 
  ### time tracking integration
 
- ** Not implemented **
+ *Not implemented*
 
   - eventually it would be nice to associate groups of images with a (persistent) description & integrate that with time tracking software
   - a few CLI-style possibilities:
