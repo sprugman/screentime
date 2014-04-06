@@ -1,0 +1,19 @@
+.shot {
+	margin: 5px;
+	padding: 5px;
+	border: 1px solid #ccc;
+	display: inline-block;
+}
+.shots img {
+	width: 90px;
+}
+
+.shots .zoomed {
+	position: fixed;
+	width: 90%;
+	max-width: 900px;
+	top: 5%;
+	left: 5%;
+	z-index: 10;
+	box-shadow: 0 0 0 1000px rgba(0,0,0,.7);
+}
