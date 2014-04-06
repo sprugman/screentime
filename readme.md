@@ -3,7 +3,8 @@ Track time with screenshots
 
 ### capture.sh 
 
- – shell script for caturing screenshots periodically
+shell script for caturing screenshots periodically
+
  - currently just a basic sleep loop
  - TODO:
 	- start & stop commands
@@ -13,24 +14,28 @@ Track time with screenshots
 
 ### local server 
 
- - simple server to support capture viewer (below)
+simple server to support capture viewer (below)
+
  - mostly static – only dynamic bit is the list of available files
- - php for now, probably will switch to node at some point
+ - php for now, should be easy to create other kinds of servers – node, python, etc.
 
 ### capture viewer
 
- - single page web app for viewing images
+single-page web gallery for viewing images
+
  - extremely basic at the moment
  - TODO:
  	- UI
 	 	- time range slider
 	 	- time labels
-	 	- proper gallery / lightbox effect
+	 	- proper gallery controls / lightbox effect
 	- Technical
- 	- proper architecture (Backbone/Marionette/Templates)
- 	- proper build process
+	 	- proper architecture (Backbone/Marionette/Templates)
+	 	- proper build process w/ linting tests
 
  ### time tracking integration
+
+ ** Not implemented **
 
   - eventually it would be nice to associate groups of images with a (persistent) description & integrate that with time tracking software
   - a few CLI-style possibilities:
