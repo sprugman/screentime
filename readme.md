@@ -1,8 +1,13 @@
-# ScreenTrack -- Track your time with screenshots
+# ScreenTrack
+## Track your time with screenshots
 
 Components
 
  - capture.sh -- shell script for caturing screenshots periodically
+ 	- currently just a basic sleep loop
+ 	- ideas for improvements
+ 		- start & stop commands
+ 		- set a limit, either # of files, # of bytes, or # of days to keep
  - server 
  	- not implemented yet
  	- simple server for viewing captures in a web page
