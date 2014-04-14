@@ -11,6 +11,9 @@ shell script for caturing screenshots periodically
 	- set a limit, either # of files, # of bytes, or # of days to keep
 	- cull older items outside of limit
 	- consider scaling images down for better performance & storage
+	- collect more data
+		- current application
+		- current document / site
 
 ### local server 
 
@@ -18,6 +21,7 @@ simple server to support capture viewer (below)
 
  - mostly static – only dynamic bit is the list of available files
  - php for now, should be easy to create other kinds of servers – node, python, etc.
+ - replace with python -m SimpleHTTPServer? or http-server for node? http://stackoverflow.com/questions/12905426/faster-alternative-to-pythons-simplehttpserver
 
 ### capture viewer
 
@@ -26,6 +30,7 @@ single-page web gallery for viewing images
  - extremely basic at the moment
  - TODO:
  	- UI
+ 		- auto update
 	 	- time range slider
 	 	- time labels
 	 	- proper gallery controls / lightbox effect
@@ -34,6 +39,13 @@ single-page web gallery for viewing images
 	 	- proper build process w/ linting tests
 
  ### time tracking integration
+  - some cli tools:
+	- https://news.ycombinator.com/item?id=7409926
+	- http://brettterpstra.com/projects/doing/
+	- http://projecthamster.wordpress.com
+	- https://github.com/aziz/PlainTasks
+	- https://github.com/christiangenco/t_time_tracker
+	- now() { echo $(date "+%Y-%m-%d %H:%M:%S") - "$@" >> $HOME/.now }
 
  *Not implemented*
 
