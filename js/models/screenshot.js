@@ -32,7 +32,10 @@ ST.module("Models", function(Mod, App, Backbone, Marionette, $, _){
 			if (attributes.screenshots && attributes.screenshots.length) { // TODO: check if it's already a collection
 				coll = new ScreenshotCollection(attributes.screenshots);
 				this.set('screenshots', coll);
-				this.set('label', coll.at(0).get('moment').calendar());
+				// TODO: this "if" can go outside it's parent once the above TODO is done.
+				if (!attributes.label) {
+					this.set('label', coll.at(0).get('moment').calendar());
+				}
 			}
 		}
 	});
