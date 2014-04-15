@@ -23,8 +23,8 @@ $screens = glob("screens/thumbs/*.png");
 	<![endif]-->
 </head>
 <body>
-	<section id="control-bar-region">hi</section>
-	<section id="screenshots-region">there</section>
+	<section id="control-bar-region">[control panel]</section>
+	<section id="activities-region">[activities]</section>
 
 
 
@@ -50,7 +50,6 @@ $screens = glob("screens/thumbs/*.png");
 	<script src="js/views/screenshot.js"></script>
 	<script>
 		$(function(){
-			//ST.init(<?php echo json_encode($screens); ?>);
 			ST.start({
 				imgs: <?php echo json_encode($screens); ?>
 			});
@@ -78,9 +77,11 @@ $screens = glob("screens/thumbs/*.png");
 
 	<script type="text/template" id="screenshot-view">
 		<img src="<%= src %>" title="<%= moment.calendar() %>" />
+		<h5><small class="muted"><%= moment.format('h:mm') %></small></h5>
 	</script>
 
 	<script type="text/template" id="screenshot-group-view">
+		<span class="badge"><%= length %></span>
 		<header><%= label %></header>
 		<section class="shots"></section>
 	</script>

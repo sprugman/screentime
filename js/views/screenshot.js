@@ -6,7 +6,7 @@ ST.module("Views", function(Mod, App, Backbone, Marionette, $, _){
 		className: 'shot',
 		events: {
 			'click': function(evt) { 
-				// TODO: turn this into a view
+				// TODO: turn this into a view w/ a date label
 				var $modal = $('#image-zoom'),
 					$fullImg = $('<img />').attr('src', this.model.get('fullSrc')),
 					$imgContainer = $('<div />').addClass('zoomed').html($fullImg);
@@ -20,11 +20,15 @@ ST.module("Views", function(Mod, App, Backbone, Marionette, $, _){
 		itemView: Mod.Screenshot,
 		template: '#screenshot-group-view',
 		itemViewContainer: '.shots',
-		className: 'shot-group'
+		className: 'shot-group list-group-item',
+		initialize: function() {
+			this.collection = this.model.get('screenshots');
+		}
 	});
 
-	Mod.ScreenshotGroups = Backbone.Marionette.CompositeView.extend({
-
+	Mod.ActivityGroup = Backbone.Marionette.CollectionView.extend({
+		itemView: Mod.Activity,
+		className: 'list-group'
 	});
 
 });

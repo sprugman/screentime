@@ -5,7 +5,8 @@ ST.module("Models", function(Mod, App, Backbone, Marionette, $, _){
 		defaults: {
 			src: null,
 			fullSrc: null,
-			moment: null
+			moment: null,
+			timestamp: null
 		},
 		initialize: function(attributes, options) {
 			if (this.validate(attributes, options)) {
@@ -19,23 +20,29 @@ ST.module("Models", function(Mod, App, Backbone, Marionette, $, _){
 	});
 
 	var ScreenshotCollection = Backbone.Collection.extend({
-		model: Screenshot
+		model: Screenshot,
+		comparitor: function(model) {
+			return model.get('moment').unix();
+		}
 	});
 
 	var Activity = Backbone.Model.extend({
 		defaults: {
 			screenshots: null,
-			label: null
+			label: null,
+			length: null
 		},
 		initialize: function(attributes, options) {
-			var coll;
+			var coll, firstMoment;
 			if (attributes.screenshots && attributes.screenshots.length) { // TODO: check if it's already a collection
 				coll = new ScreenshotCollection(attributes.screenshots);
+				firstMoment = coll.at(0).get('moment');
 				this.set('screenshots', coll);
 				// TODO: this "if" can go outside it's parent once the above TODO is done.
 				if (!attributes.label) {
-					this.set('label', coll.at(0).get('moment').calendar());
+					this.set('label', firstMoment.calendar());
 				}
+				this.set('length', coll.length);
 			}
 		}
 	});

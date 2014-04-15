@@ -2,7 +2,7 @@
 	margin: 10px;
 	padding: 5px;
 	border: 1px solid #ccc;
-	float: left;
+	display: inline-block;
 	cursor: pointer;
 }
 .shots img {
@@ -12,17 +12,6 @@
 .zoomed img {
 	max-width: 100%;
 	max-height: 100%;
-}
-
-.new-day {
-	clear: both;
-}
-
-.new-day:before {
-	content: "New Day";
-	display: block;
-	margin: 40px;
-	background: red;
 }
 
 /* spinner code not working for some reason */
