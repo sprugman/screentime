@@ -31,10 +31,13 @@ single-page web gallery for viewing images
  - extremely basic at the moment
  - TODO:
  	- UI
- 		- auto update
-		- time range slider
-		- better gallery (zoom to full screen?)
-		- add ability to log time from viewer? will require more sophisticated server
+ 		- auto update latest
+ 		- sort with latest on top
+ 		- group by gaps, rather than just by hour
+		- time range slider / pagination
+		- zoom to full screen from modal overlay
+		- add ability to annotate events from viewer? will require more sophisticated server
+		- allow splitting & joining of groups
 	- Technical
 		- proper build process w/ linting tests
 
