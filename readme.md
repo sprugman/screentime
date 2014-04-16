@@ -28,7 +28,7 @@ simple server to support capture viewer (below)
 
 single-page web gallery for viewing images
 
- - extremely basic at the moment
+ - pretty basic at the moment
  - TODO:
  	- UI
  		- auto update latest
