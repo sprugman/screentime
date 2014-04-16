@@ -1,5 +1,13 @@
 # ScreenTime
-Track time with screenshots
+Track time with screenshots.
+
+## What is this?
+
+<to be written>
+
+## How to use?
+
+<to be written>
 
 ### capture.sh 
 
@@ -31,18 +39,22 @@ single-page web gallery for viewing images
  - pretty basic at the moment
  - TODO:
  	- UI
- 		- auto update latest
- 		- sort with latest on top
- 		- group by gaps, rather than just by hour
+ 		- sort with most recent group on top
 		- open/close groups
-		- control panel
+ 		- group by time gaps, rather than by hour
+		- add control panel
 			- time range slider / pagination
 			- open/close all
 			- sorting options
 			- grouping options(?)
-		- zoom to full screen from modal overlay
-		- add ability to annotate events from viewer? will require more sophisticated server
-		- allow splitting & joining of groups
+		- zoomed view
+			- make max size larger
+			- prev/next buttons over whole modal
+			- keyboard navigation
+		- badges are hard to notice
+ 		- auto update with latest screenshots (requires more sophisticated server)
+		- add ability to annotate events from viewer (requires more sophisticated server)
+		- allow splitting & joining of annotated groups
 	- Technical
 		- proper build process w/ linting tests
 
