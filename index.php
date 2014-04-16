@@ -9,7 +9,7 @@ $screens = glob("screens/thumbs/*.png");
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>ScreenTrack</title>
+	<title>ScreenTime</title>
 
 	<!-- Bootstrap -->
 	<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
