@@ -38,13 +38,13 @@ single-page web gallery for viewing images
 	- Technical
 		- proper build process w/ linting tests
 
- ### time tracking integration
+### time tracking integration
 
- *Not implemented*
+*Not implemented*
  
-  - Eventually it would be nice to associate groups of images with a (persistent) description & integrate that with time tracking software
-  - There are loads of such tools out there. I'm currently playing with timelyapp.com, but it doesn't have an API.
-  - Some CLI time trackers:
+ - Eventually it would be nice to associate groups of images with a (persistent) description & integrate that with time tracking software
+ - There are loads of such tools out there. I'm currently playing with timelyapp.com, but it doesn't have an API.
+ - Some CLI time trackers:
 	- https://news.ycombinator.com/item?id=7409926
 	- http://brettterpstra.com/projects/doing/
 	- http://projecthamster.wordpress.com
