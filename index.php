@@ -36,12 +36,7 @@ $screens = glob("screens/thumbs/*.png");
 	<script src="bower_components/momentjs/moment.js"></script>
 	<script src="bower_components/underscore/underscore.js"></script>
 	<script src="bower_components/backbone/backbone.js"></script>
-	<!--
-	<script src="bower_components/backbone.babysitter/lib/backbone.babysitter.js"></script>
-	<script src="bower_components/backbone.wreqr/lib/backbone.wreqr.js"></script>
--->
 	<script src="bower_components/marionette/lib/backbone.marionette.js"></script>
-
 
 	<!-- APP CODE -->
 	<!-- MODELS / COLLECTIONS / VIEWS -->
@@ -61,11 +56,18 @@ $screens = glob("screens/thumbs/*.png");
 	<div class="modal fade" id="image-zoom" tabindex="-1" role="dialog" aria-labelledby="image zoom modal" aria-hidden="true">
 	  <div class="modal-dialog modal-lg">
 		<div class="modal-content">
-			<!--
 			<div class="modal-header">
+				<div class="btn-group btn-group-xs">
+					<button type="button" class="btn btn-default prev">
+						<span class="glyphicon glyphicon-chevron-left"></span>
+					</button>
+					<button type="button" class="btn btn-default next">
+						<span class="glyphicon glyphicon-chevron-right"></span>
+					</button>
+				</div>
+				<span class="caption"></span>
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 			</div>
-			-->
 			<div class="modal-body">
 				<span class="spinner"><i class="icon-spin icon-refresh"></i></span>
 				<span class="glyphicon glyphicon-refresh glyphicon-spin"></span>

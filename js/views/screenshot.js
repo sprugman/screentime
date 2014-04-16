@@ -6,11 +6,28 @@ ST.module("Views", function(Mod, App, Backbone, Marionette, $, _){
 		className: 'shot',
 		events: {
 			'click': function(evt) { 
-				// TODO: turn this into a view w/ a date label
+				// TODO: turn this into a view
 				var $modal = $('#image-zoom'),
 					$fullImg = $('<img />').attr('src', this.model.get('fullSrc')),
-					$imgContainer = $('<div />').addClass('zoomed').html($fullImg);
+					idx = this.model.get('globalIndex'),
+					$prev = $modal.find('.modal-header .prev'),
+					$next = $modal.find('.modal-header .next'),
+					$imgContainer = $('<figure />').addClass('zoomed').html($fullImg);
+
+				if (idx === 0) { 
+					$prev.prop('disabled', true); 
+				} else {
+					$prev.prop('disabled', false); 
+				}
+				if (idx === this.model.collection.length -1) {
+					$next.prop('disabled', true); 
+				} else {
+					$next.prop('disabled', false);
+				}
+				$prev.attr('data-current-idx', idx);
+				$next.attr('data-current-idx', idx);
 				$modal.find('.modal-body').html($imgContainer);
+				$modal.find('.modal-header .caption').html(this.model.get('moment').calendar());
 				$modal.modal();
 			}
 		}

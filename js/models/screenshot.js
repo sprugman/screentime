@@ -40,7 +40,7 @@ ST.module("Models", function(Mod, App, Backbone, Marionette, $, _){
 				this.set('screenshots', coll);
 				// TODO: this "if" can go outside it's parent once the above TODO is done.
 				if (!attributes.label) {
-					this.set('label', firstMoment.calendar());
+					this.set('label', firstMoment.calendar()); // TODO: customize format
 				}
 				this.set('length', coll.length);
 			}
