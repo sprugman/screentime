@@ -3,11 +3,11 @@ Track time with screenshots.
 
 ## What is this?
 
-<to be written>
+[to be written]
 
 ## How to use?
 
-<to be written>
+[to be written]
 
 ### capture.sh 
 
