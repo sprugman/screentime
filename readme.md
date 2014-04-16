@@ -34,7 +34,12 @@ single-page web gallery for viewing images
  		- auto update latest
  		- sort with latest on top
  		- group by gaps, rather than just by hour
-		- time range slider / pagination
+		- open/close groups
+		- control panel
+			- time range slider / pagination
+			- open/close all
+			- sorting options
+			- grouping options(?)
 		- zoom to full screen from modal overlay
 		- add ability to annotate events from viewer? will require more sophisticated server
 		- allow splitting & joining of groups
