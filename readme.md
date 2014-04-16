@@ -1,4 +1,4 @@
-# ScreenTrack
+# ScreenTime
 Track time with screenshots
 
 ### capture.sh 
