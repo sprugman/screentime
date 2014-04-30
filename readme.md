@@ -3,7 +3,7 @@ Track time with screenshots.
 
 ## What is this?
 
-I'm absolutely terrible at tracking my time. I always forget to start the timer. And then I always forget to stop the timer when I switch tasks. However, I think knowing how long I spend on things would be useful. To that end, I'm using the free version of toggl for tracking time, but supplementing it with an automated screencapture system so I can easily review what I was doing on my computer when.
+I'm absolutely terrible at tracking my time. I always forget to start the timer. And then I always forget to stop the timer when I switch tasks. However, I think knowing how long I spend on things would be useful. To that end, I'm using the free version of [toggl](https://www.toggl.com) for tracking time, but supplementing it with an automated screencapture system so I can easily review what I was doing on my computer when.
 
 There are several apps available that integrate screenshots with timing software, but I find the creep factor too strong to want to use them. Instead, I wrote a simple shell script to capture screenshots, along with a simple web app for viewing them.
 
@@ -15,9 +15,9 @@ There are three components, all of which are in this repository:
 
  - capture.sh -- a bash script for capturing screenshots on a periodic basis
  - local server -- any simple static server will do
- - capture viewer -- a single page web app for viewing the captured screenshots
+ - capture viewer -- a single-page web app for viewing the captured screenshots
 
- Check out the project, and run capture.sh in a shell. I just leave it running pretty much all the time. For the capture viewer, I have a php server set up through MAMP, but any static server will do. The easiest is probably either the python or php one built-in to OSX.
+Check out the project, and run capture.sh in a shell. I just leave it running pretty much all the time. For the capture viewer, any static server will do. The easiest is probably the python one built-in to OSX. More suggestions below.
 
 ### capture.sh 
 
@@ -25,9 +25,9 @@ shell script for caturing screenshots periodically
 
  - just a basic sleep loop that runs every five minutes (configurable)
  - takes a screenshot using OSX's `screencapture` program
- - copies it into screens/full
- - creates a thumbnail sized version and copies that to screens/thumbs
- - after each capture, updates a static list of all the files that can be served to the web app
+ - copies it into `screens/full`
+ - creates a thumbnail-sized version and copies that to `screens/thumbs`
+ - after each capture, updates a static list of all the files that can be served to the web app (`screens/screens-list.txt`)
  - enhancement ideas:
 	- start & stop commands
 	- set a limit, either # of files, # of bytes, or # of days to keep
@@ -87,3 +87,7 @@ single-page web gallery for viewing images
  	- https://github.com/larose/utt
  	- http://wtime.sourceforge.net/
  	- https://github.com/projecthamster/hamster
+
+## License
+
+[MIT](license.txt) 
