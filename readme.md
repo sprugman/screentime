@@ -71,6 +71,7 @@ single-page web gallery for viewing images
 	- Technical
 		- proper build process w/ linting & tests
 		- sass
+		- clean up architecture a bit
 
 ### time tracking integration
 
