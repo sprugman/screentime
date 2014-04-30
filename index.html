@@ -1,8 +1,3 @@
-<?php
-
-$screens = glob("screens/thumbs/*.png");
-
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -44,9 +39,12 @@ $screens = glob("screens/thumbs/*.png");
 	<script src="js/models/screenshot.js"></script>
 	<script src="js/views/screenshot.js"></script>
 	<script>
-		$(function(){
-			ST.start({
-				imgs: <?php echo json_encode($screens); ?>
+		$.get('/screens/screens-list.txt', function(data) {
+			var imageArr = _(data.split("\n")).compact().map(function(item) { return 'screens/thumbs/' + item; })
+			$(function(){
+				ST.start({
+					imgs: imageArr
+				});
 			});
 		});
 	</script>

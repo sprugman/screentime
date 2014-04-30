@@ -16,13 +16,20 @@ ST.module("Models", function(Mod, App, Backbone, Marionette, $, _){
 		},
 		validate: function(attributes, options) {
 			return !!attributes.src;
+		},
+		parse: function(data) {
+			debugger;
 		}
 	});
 
 	var ScreenshotCollection = Backbone.Collection.extend({
 		model: Screenshot,
+		url: 'screens/screens-list.txt',
 		comparitor: function(model) {
 			return model.get('moment').unix();
+		},
+		parse: function(data) {
+			debugger;
 		}
 	});
 

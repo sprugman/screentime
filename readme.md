@@ -3,67 +3,80 @@ Track time with screenshots.
 
 ## What is this?
 
-[to be written]
+I'm absolutely terrible at tracking my time. I always forget to start the timer. And then I always forget to stop the timer when I switch tasks. However, I think knowing how long I spend on things would be useful. To that end, I'm using the free version of toggl for tracking time, but supplementing it with an automated screencapture system so I can easily review what I was doing on my computer when.
+
+There are several apps available that integrate screenshots with timing software, but I find the creep factor too strong to want to use them. Instead, I wrote a simple shell script to capture screenshots, along with a simple web app for viewing them.
+
+Pull requests & contributions are encouraged.
 
 ## How to use?
 
-[to be written]
+There are three components, all of which are in this repository:
+
+ - capture.sh -- a bash script for capturing screenshots on a periodic basis
+ - local server -- any simple static server will do
+ - capture viewer -- a single page web app for viewing the captured screenshots
+
+ Check out the project, and run capture.sh in a shell. I just leave it running pretty much all the time. For the capture viewer, I have a php server set up through MAMP, but any static server will do. The easiest is probably either the python or php one built-in to OSX.
 
 ### capture.sh 
 
 shell script for caturing screenshots periodically
 
- - currently just a basic sleep loop
- - TODO:
+ - just a basic sleep loop that runs every five minutes (configurable)
+ - takes a screenshot using OSX's `screencapture` program
+ - copies it into screens/full
+ - creates a thumbnail sized version and copies that to screens/thumbs
+ - after each capture, updates a static list of all the files that can be served to the web app
+ - enhancement ideas:
 	- start & stop commands
 	- set a limit, either # of files, # of bytes, or # of days to keep
 	- cull older items outside of limit
-	- consider scaling images down for better performance & storage
 	- collect more data
 		- current application
 		- current document / site
-	- consider writing out list of files after each capture so server can be even dumber
+	- incorporate some advice from: http://robertmuth.blogspot.com/2012/08/better-bash-scripting-in-15-minutes.html
 
 ### local server 
 
-simple server to support capture viewer (below)
+simple static server to support capture viewer (below)
 
- - mostly static – only dynamic bit is the list of available files
- - php for now, should be easy to create other kinds of servers – node, python, etc.
- - replace with python -m SimpleHTTPServer? or http-server for node? http://stackoverflow.com/questions/12905426/faster-alternative-to-pythons-simplehttpserver
+ - I'm using php, but can be any static server:
+ - python -m SimpleHTTPServer
+ - php -S localhost:8000 (PHP 5.4.0)
+ - http-server for node
+ - http://stackoverflow.com/questions/12905426/faster-alternative-to-pythons-simplehttpserver
 
 ### capture viewer
 
 single-page web gallery for viewing images
 
  - pretty basic at the moment
- - TODO:
+ - enhancement ideas:
  	- UI
  		- sort with most recent group on top
 		- open/close groups
- 		- group by time gaps, rather than by hour
+		- group by day
 		- add control panel
-			- time range slider / pagination
+			- time range slider / pagination (currently only shows most recent 150 images)
 			- open/close all
 			- sorting options
 			- grouping options(?)
 		- zoomed view
 			- make max size larger
-			- prev/next buttons over whole modal
+			- prev/next buttons over whole image
 			- keyboard navigation
-		- badges are hard to notice
- 		- auto update with latest screenshots (requires more sophisticated server)
-		- add ability to annotate events from viewer (requires more sophisticated server)
-		- allow splitting & joining of annotated groups
+		- badges are hard to notice & not that useful
+ 		- auto refresh with latest screenshots
 	- Technical
-		- proper build process w/ linting tests
+		- proper build process w/ linting & tests
 
 ### time tracking integration
 
 *Not implemented*
  
- - Eventually it would be nice to associate groups of images with a (persistent) description & integrate that with time tracking software
- - There are loads of such tools out there. I'm currently playing with timelyapp.com, but it doesn't have an API.
+ - Eventually it might be nice to associate groups of images with a (persistent) description & integrate that with time tracking software
+ - There are loads of such tools out there. I'm currently playing with toggl and it seems to be working fairly well. Not sure there's any need for more integration.
  - Some CLI time trackers:
 	- https://news.ycombinator.com/item?id=7409926
 	- http://brettterpstra.com/projects/doing/

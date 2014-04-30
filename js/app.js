@@ -9,13 +9,14 @@ ST.addRegions({
 });
 
 ST.addInitializer(function(options) {
+	var imgList;
 	ST.data = {};
 	ST.data.allImages = options.imgs;
 	ST.data.currentImages = options.imgs.slice(-DEFAULT_PAGE_SIZE);
 	var imgs = _(ST.data.currentImages).map(function(item, i) { return { src: item, globalIndex: i }; });
 	ST.data.currentColl = new ST.Models.ScreenshotCollection(imgs);
 	var activities = ST.data.currentColl.groupBy(function(item) {
-		// TODO: be smarter about grouping
+		// TODO: be smarter about grouping?
 		return item.get('moment').format('YYYY-MM-DD HH');
 	});
 	activities = _(activities).map(function(item) { return { screenshots: item }; });
