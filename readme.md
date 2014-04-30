@@ -1,5 +1,5 @@
 # ScreenTime
-Track time with screenshots.
+I'm ready for my close-up, Mr. DeMille.
 
 ## What is this?
 
