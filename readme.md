@@ -70,6 +70,7 @@ single-page web gallery for viewing images
  		- auto refresh with latest screenshots
 	- Technical
 		- proper build process w/ linting & tests
+		- sass
 
 ### time tracking integration
 
