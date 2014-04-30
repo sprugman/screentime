@@ -9,7 +9,7 @@ There are several apps available that integrate screenshots with timing software
 
 Pull requests & contributions are encouraged.
 
-## How to use?
+## How to use it?
 
 There are three components, all of which are in this repository:
 
@@ -17,7 +17,7 @@ There are three components, all of which are in this repository:
  - local server -- any simple static server will do
  - capture viewer -- a single-page web app for viewing the captured screenshots
 
-Check out the project, and run capture.sh in a shell. I just leave it running pretty much all the time. For the capture viewer, any static server will do. The easiest is probably the python one built-in to OSX. More suggestions below.
+Check out the project, create a `screens` folder inside the project, and run capture.sh in a shell. I just leave it running pretty much all the time. For the capture viewer, any static server will do. The easiest is probably the python one built-in to OSX. More suggestions below.
 
 ### capture.sh 
 
