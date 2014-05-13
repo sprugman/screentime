@@ -17,7 +17,7 @@ There are three components, all of which are in this repository:
  - local server -- any simple static server will do
  - capture viewer -- a single-page web app for viewing the captured screenshots
 
-Check out the project, create a `screens` folder inside the project, and run capture.sh in a shell. I just leave it running pretty much all the time. For the capture viewer, any static server will do. The easiest is probably the python one built-in to OSX. More suggestions below.
+Check out the project, create `screens`, `screens/full` & `screens/thumbs` folders inside the project, and run capture.sh in a shell. I just leave it running pretty much all the time. For the capture viewer, any static server will do. The easiest is probably the python one built-in to OSX. More suggestions below.
 
 ### capture.sh 
 
@@ -39,7 +39,7 @@ shell script for caturing screenshots periodically
 
 ### local server 
 
-simple static server to support capture viewer (below)
+simple static server to support the capture viewer (below)
 
  - I'm using php, but can be any static server:
  - python -m SimpleHTTPServer
