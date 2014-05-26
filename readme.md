@@ -52,6 +52,7 @@ simple static server to support the capture viewer (below)
 single-page web gallery for viewing images
 
 ![Screenshot of the Capture Viewer](images/capture-viewer-screen.png)
+![Capture Viewer with an image zoomed](images/capture-viewer-screen-zoomed.png)
 
  - pretty basic at the moment
  - enhancement ideas:
