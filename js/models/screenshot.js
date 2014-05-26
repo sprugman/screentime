@@ -12,13 +12,11 @@ ST.module("Models", function(Mod, App, Backbone, Marionette, $, _){
 			if (this.validate(attributes, options)) {
 				this.set('moment', moment(attributes.src, 'YYYY-MM-DD HH-mm-ss'));
 				this.set('fullSrc', attributes.src.replace('thumbs', 'full'));
+				this.set('timestamp', this.get('moment').unix());
 			}
 		},
 		validate: function(attributes, options) {
 			return !!attributes.src;
-		},
-		parse: function(data) {
-			debugger;
 		}
 	});
 
@@ -26,12 +24,33 @@ ST.module("Models", function(Mod, App, Backbone, Marionette, $, _){
 		model: Screenshot,
 		url: 'screens/screens-list.txt',
 		comparitor: function(model) {
-			return model.get('moment').unix();
+			return -model.get('moment').unix();
 		},
 		parse: function(data) {
-			debugger;
+			var result = _(data.split("\n")).compact().map(function(item, i) { 
+				return new Screenshot({ 
+					src: 'screens/thumbs/' + item, 
+					id: (i + 1),
+					globalIndex: i 
+				});
+			});
+			return result;
+		},
+		fetch: function() {
+			$.get(this.url, this.parse);
 		}
 	});
+
+	var getScreenShotsPromise = function() {
+		var promise = new $.Deferred();
+		$.get('screens/screens-list.txt').done(function(data){
+			var result = _(data.split("\n")).compact().map(function(item, i) { 
+				return { src: 'screens/thumbs/' + item, globalIndex: i };
+			});
+			promise.resolve(result);
+		});
+		return promise;
+	};
 
 	var Activity = Backbone.Model.extend({
 		defaults: {
@@ -45,7 +64,7 @@ ST.module("Models", function(Mod, App, Backbone, Marionette, $, _){
 				coll = new ScreenshotCollection(attributes.screenshots);
 				firstMoment = coll.at(0).get('moment');
 				this.set('screenshots', coll);
-				// TODO: this "if" can go outside it's parent once the above TODO is done.
+				// TODO: this "if" can go outside its parent once the above TODO is done.
 				if (!attributes.label) {
 					this.set('label', firstMoment.calendar()); // TODO: customize format
 				}
@@ -61,6 +80,7 @@ ST.module("Models", function(Mod, App, Backbone, Marionette, $, _){
 	// TODO: make more like a namespace
 	Mod.Screenshot = Screenshot;
 	Mod.ScreenshotCollection = ScreenshotCollection;
+	Mod.getScreenShotsPromise = getScreenShotsPromise;
 	Mod.Activity = Activity;
 	Mod.ActivityCollection = ActivityCollection;
 });

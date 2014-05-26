@@ -4,6 +4,9 @@ ST.module("Views", function(Mod, App, Backbone, Marionette, $, _){
 	Mod.Screenshot = Backbone.Marionette.ItemView.extend({
 		template: '#screenshot-view',
 		className: 'shot',
+		initialize: function(options) {
+			this.$el.attr('data-gid', this.model.get('globalIndex'));
+		},
 		events: {
 			'click': function(evt) { 
 				// TODO: turn this into a view

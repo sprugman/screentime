@@ -37,15 +37,11 @@
 	<!-- MODELS / COLLECTIONS / VIEWS -->
 	<script src="js/app.js"></script>
 	<script src="js/models/screenshot.js"></script>
+	<script src="js/ViewerManager.js"></script>
 	<script src="js/views/screenshot.js"></script>
 	<script>
-		$.get('/screens/screens-list.txt', function(data) {
-			var imageArr = _(data.split("\n")).compact().map(function(item) { return 'screens/thumbs/' + item; })
-			$(function(){
-				ST.start({
-					imgs: imageArr
-				});
-			});
+		$(function() {
+			ST.start();
 		});
 	</script>
 
