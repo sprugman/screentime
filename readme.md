@@ -30,11 +30,11 @@ shell script for caturing screenshots periodically
  - after each capture, updates a static list of all the files that can be served to the web app (`screens/screens-list.txt`)
  - enhancement ideas:
 	- start & stop commands
-	- set a limit, either # of files, # of bytes, or # of days to keep
-	- cull older items outside of limit
+	- set a limit, either # of files, # of bytes, or # of days to keep, cull older items outside of limit
 	- collect more data
 		- current application
 		- current document / site
+		- mouse/keyboard activity
 	- incorporate some advice from: http://robertmuth.blogspot.com/2012/08/better-bash-scripting-in-15-minutes.html
 
 ### local server 
@@ -54,7 +54,7 @@ single-page web gallery for viewing images
  - pretty basic at the moment
  - enhancement ideas:
  	- UI
- 		- sort with most recent group on top
+ 		- ~~sort with most recent group on top~~
 		- open/close groups
 		- group by day
 		- add control panel
@@ -67,7 +67,7 @@ single-page web gallery for viewing images
 			- prev/next buttons over whole image
 			- keyboard navigation
 		- badges are hard to notice & not that useful
- 		- auto refresh with latest screenshots
+ 		- ~~auto refresh with latest screenshots~~
 	- Technical
 		- proper build process w/ linting & tests
 		- sass
