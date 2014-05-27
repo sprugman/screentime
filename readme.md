@@ -1,5 +1,5 @@
 # ScreenTime
-I'm ready for my close-up, Mr. DeMille.
+"All right, Mr. DeMille, I'm ready for my close-up."
 
 ## What is this?
 
