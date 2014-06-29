@@ -17,7 +17,12 @@ There are three components, all of which are in this repository:
  - local server -- any simple static server will do
  - capture viewer -- a single-page web app for viewing the captured screenshots
 
-Check out the project, create `screens`, `screens/full` & `screens/thumbs` folders inside the project, and run capture.sh in a shell. I just leave it running pretty much all the time. For the capture viewer, any static server will do. The easiest is probably the python one built-in to OSX, which you can run by entering `python -m SimpleHTTPServer 8000` in a terminal from the `screentime` folder and then going to `http://localhost:8000` in a browser. More suggestions below.
+Check out the project, create `screens`, `screens/full` & `screens/thumbs` folders inside the project, and run capture.sh in a shell. I just leave it running pretty much all the time. For the capture viewer, any static server will do. The easiest is probably the python one built-in to OSX, which you can run by:
+
+ 1. entering `python -m SimpleHTTPServer 8000` in a terminal from the `screentime` folder 
+ 2. going to `http://localhost:8000` in a browser. 
+
+More server suggestions below.
 
 ### capture.sh 
 
@@ -30,6 +35,7 @@ shell script for caturing screenshots periodically
  - after each capture, updates a static list of all the files that can be served to the web app (`screens/screens-list.txt`)
  - auto deletes files older than 20 days (configurable)
  - enhancement ideas:
+	- auto create image folders on first run
 	- start & stop commands
 	- collect more data
 		- current application
