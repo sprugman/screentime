@@ -28,9 +28,9 @@ shell script for caturing screenshots periodically
  - copies it into `screens/full`
  - creates a thumbnail-sized version and copies that to `screens/thumbs`
  - after each capture, updates a static list of all the files that can be served to the web app (`screens/screens-list.txt`)
+ - auto deletes files older than 20 days (configurable)
  - enhancement ideas:
 	- start & stop commands
-	- set a limit, either # of files, # of bytes, or # of days to keep, cull older items outside of limit
 	- collect more data
 		- current application
 		- current document / site

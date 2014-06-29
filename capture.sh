@@ -5,6 +5,7 @@ while (true) do
 	TIME=$(date +"%H-%M-%S")
 	FULL_FILE="./screens/full/$DATE--$TIME.png"
 	THUMB_FILE="./screens/thumbs/$DATE--$TIME.png"
+	DAYS_TO_KEEP=20
 
 	screencapture -x "$FULL_FILE" > /dev/null 2>&1
 
@@ -23,7 +24,9 @@ while (true) do
 		printf "?" # screen capture failed -- this seems to happen often, but it may be when machine is asleep or similar
 	fi
 
-	# TODO: something to cull old screen caps
+	# cull old screen caps
+	find screens/thumbs -name "*.png" -type f -Btime +"$DAYS_TO_KEEP"d -delete
+	find screens/full -name "*.png" -type f -Btime +"$DAYS_TO_KEEP"d -delete
 	
 	sleep 300
 done
